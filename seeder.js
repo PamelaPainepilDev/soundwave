@@ -7,39 +7,42 @@ async function seedear() {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
 
-    // Crear artistas
-    const taylor = await Artista.create({
-      nombre: "Taylor Swift",
-      genero: "Pop",
+    // artistas
+    const imagineDragons = await Artista.create({
+      nombre: "Imagine Dragons",
+      genero: "Rock",
       pais: "Estados Unidos"
     });
 
-    const coldplay = await Artista.create({
-      nombre: "Coldplay",
-      genero: "Rock",
+    const adele = await Artista.create({
+      nombre: "Adele",
+      genero: "Pop",
       pais: "Reino Unido"
     });
 
-    const badBunny = await Artista.create({
-      nombre: "Bad Bunny",
-      genero: "Urbano",
-      pais: "Puerto Rico"
+    const sia = await Artista.create({
+      nombre: "Sia",
+      genero: "Pop",
+      pais: "Australia"
     });
 
-    // Crear canciones
+    // canciones
     await Cancion.bulkCreate([
-      { titulo: "Shake It Off", album: "1989", duracion: 219, artistaId: taylor.id },
-      { titulo: "Blank Space", album: "1989", duracion: 231, artistaId: taylor.id },
-      { titulo: "Yellow", album: "Parachutes", duracion: 269, artistaId: coldplay.id },
-      { titulo: "The Scientist", album: "A Rush of Blood", duracion: 307, artistaId: coldplay.id },
-      { titulo: "Tití Me Preguntó", album: "Un Verano Sin Ti", duracion: 238, artistaId: badBunny.id },
-      { titulo: "Me Porto Bonito", album: "Un Verano Sin Ti", duracion: 178, artistaId: badBunny.id }
+      { titulo: "Believer", album: "Evolve", duracion: 204, artistaId: imagineDragons.id },
+      { titulo: "Thunder", album: "Evolve", duracion: 187, artistaId: imagineDragons.id },
+      { titulo: "Radioactive", album: "Night Visions", duracion: 186, artistaId: imagineDragons.id },
+      { titulo: "Rolling in the Deep", album: "21", duracion: 228, artistaId: adele.id },
+      { titulo: "Someone Like You", album: "21", duracion: 285, artistaId: adele.id },
+      { titulo: "Hello", album: "25", duracion: 295, artistaId: adele.id },
+      { titulo: "Unstoppable", album: "This Is Acting", duracion: 217, artistaId: sia.id },
+      { titulo: "Chandelier", album: "1000 Forms of Fear", duracion: 221, artistaId: sia.id },
+      { titulo: "Cheap Thrills", album: "This Is Acting", duracion: 211, artistaId: sia.id }
     ]);
 
-    console.log("✓ Datos de prueba creados!");
+    console.log("Datos de prueba creados!");
     process.exit(0);
   } catch (err) {
-    console.error("✗ Error:", err.message);
+    console.error("Error:", err.message);
     process.exit(1);
   }
 }

@@ -1,5 +1,5 @@
-const Artista = require("./Artista");
-const Cancion = require("./Cancion");
+const Artista = require("./artista");
+const Cancion = require("./cancion");
 
 Artista.hasMany(Cancion, { foreignKey: "artistaId" });
 Cancion.belongsTo(Artista, { foreignKey: "artistaId" });
