@@ -1,0 +1,14 @@
+<h2>{{artista.nombre}} </h2>
+<p>Género: {{artista.genero}} - País: {{artista.pais}} </p>
+
+<a href="/artistas">Volver</a>
+<a href="/artistas/{{artista.id}}/editar">Editar</a>
+
+<h3>Canciones</h3>
+<ul>
+    {{#each artista.Cancions}}
+    <li>
+        {{this.titulo}} - {{this.album}} - {{this.duracion}}s
+    </li>
+    {{/each}}
+</ul>
