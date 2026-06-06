@@ -21,3 +21,19 @@ exports.crear = async (req, res) => {
   await Cancion.create(req.body);
   res.redirect("/canciones");
 };
+
+exports.top10 = async (req, res) => {
+  const canciones = await Cancion.findAll({
+    include: Artista,
+    order: [["reproducciones", "DESC"]],
+    limit: 10
+  });
+  res.render("canciones/top10", {canciones: canciones.map(c => c.toJSON())});
+};
+
+exports.play = async (req, res) => {
+  const cancion = await Cancion.findByPk(req.params.id);
+  if (!cancion) return res.status(404).send("No encontrada");
+  await cancion.increment("reproducciones");
+  res.redirect(`/canciones/${req.params.id}`);
+};
