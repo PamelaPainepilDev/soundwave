@@ -29,6 +29,18 @@ header h1 {
   letter-spacing: 0.05em;
 }
 
+.nota {
+  color: #38bdf8;
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px #38bdf8);
+  animation: notaPulso 2s ease-in-out infinite;
+}
+
+@keyframes notaPulso {
+  0%, 100% {filter: drop-shadow(0 0 4px #38bdf8);}
+  50% {filter: drop-shadow(0 0 12px #38bdf8);}
+}
+
 nav a {
   color: #94a3b8;
   text-decoration: none;
@@ -121,6 +133,7 @@ ul li {
   border: 1px solid #1a2332;
   border-radius: 10px;
   padding: 1rem 1.25rem;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -204,6 +217,7 @@ ol li:nth-child(10) { animation-delay: 0.5s; }
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .badge {
