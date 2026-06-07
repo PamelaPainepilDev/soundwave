@@ -1,26 +1,32 @@
-<h2>Nueva canción</h2>
+<div class="page-header">
+  <h2>Nueva canción</h2>
+</div>
 
-<form method="POST" action="/canciones">
-  <div>
-    <label>Título</label>
-    <input type="text" name="titulo" required>
-  </div>
-  <div>
-    <label>Álbum</label>
-    <input type="text" name="album">
-  </div>
-  <div>
-    <label>Duración (segundos)</label>
-    <input type="number" name="duracion">
-  </div>
-  <div>
-    <label>Artista</label>
-    <select name="artistaId">
-      {{#each artistas}}
-      <option value="{{this.id}}">{{this.nombre}}</option>
-      {{/each}}
-    </select>
-  </div>
-  <button type="submit">Guardar</button>
-  <a href="/canciones">Cancelar</a>
-</form>
+<div class="form-card">
+  <form method="POST" action="/canciones">
+    <div>
+      <label>Título</label>
+      <input type="text" name="titulo" required>
+    </div>
+    <div>
+      <label>Álbum</label>
+      <input type="text" name="album">
+    </div>
+    <div>
+      <label>Duración (segundos)</label>
+      <input type="number" name="duracion">
+    </div>
+    <div>
+      <label>Artista</label>
+      <select name="artistaId">
+        {{#each artistas}}
+        <option value="{{this.id}}">{{this.nombre}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">Guardar</button>
+      <a href="/canciones" class="btn-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>

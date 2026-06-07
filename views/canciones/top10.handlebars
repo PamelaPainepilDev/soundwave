@@ -1,12 +1,19 @@
-<h2>🏆 Top 10 canciones</h2>
+<div class="page-header">
+  <h2>🏆 Top 10 canciones</h2>
+</div>
 
 <ol>
   {{#each canciones}}
   <li>
     <a href="/canciones/{{this.id}}">{{this.titulo}}</a>
-    — {{this.Artistum.nombre}} — {{this.reproducciones}} reproducciones
+    <span class="meta">
+      <span class="badge">{{this.Artistum.nombre}}</span>
+      <span class="badge badge-green">{{this.reproducciones}} plays</span>
+    </span>
   </li>
   {{/each}}
 </ol>
 
-<a href="/canciones">← Volver</a>
+<div style="margin-top: 1.5rem;">
+  <a href="/canciones" class="btn-secondary">← Volver</a>
+</div>

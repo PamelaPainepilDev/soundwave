@@ -1,18 +1,24 @@
-<h2>Nuevo artista</h2>
+<div class="page-header">
+  <h2>Nuevo artista</h2>
+</div>
 
-<form method="POST" action="/artistas">
-<div>
-    <label>Nombre</label>
-    <input type="text" name="nombre" required>
+<div class="form-card">
+  <form method="POST" action="/artistas">
+    <div>
+      <label>Nombre</label>
+      <input type="text" name="nombre" required>
+    </div>
+    <div>
+      <label>Género</label>
+      <input type="text" name="genero">
+    </div>
+    <div>
+      <label>País</label>
+      <input type="text" name="pais">
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">Guardar</button>
+      <a href="/artistas" class="btn-secondary">Cancelar</a>
+    </div>
+  </form>
 </div>
-<div>
-    <label>Género</label>
-    <input type="text" name="genero">
-</div>
-<div>
-    <label>País</label>
-    <input type="text" name="pais">
-</div>
-<button type="submit">Guardar</button>
-<a href="/artistas">Cancelar</a>
-</form>

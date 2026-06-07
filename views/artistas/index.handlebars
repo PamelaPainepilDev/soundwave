@@ -1,11 +1,16 @@
-<h2>Artistas</h2>
-<a href="/artistas/nuevo">+ Nuevo artista</a>
+<div class="page-header">
+  <h2>Artistas</h2>
+  <a href="/artistas/nuevo" class="btn-primary">+ Nuevo artista</a>
+</div>
 
 <ul>
-    {{#each artistas}}
-    <li>
-        <a href="/artistas/{{this.id}}">{{this.nombre}}</a>
-        - {{this.genero}} - {{this.pais}}
-    </li>
-    {{/each}}
+  {{#each artistas}}
+  <li>
+    <a href="/artistas/{{this.id}}">{{this.nombre}}</a>
+    <span class="meta">
+      <span class="badge">{{this.genero}}</span>
+      <span class="badge">{{this.pais}}</span>
+    </span>
+  </li>
+  {{/each}}
 </ul>

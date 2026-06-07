@@ -1,11 +1,15 @@
-<h2>{{cancion.titulo}}</h2>
-<p>Álbum: {{cancion.album}} — Duración: {{cancion.duracion}}s</p>
-<p>Reproducciones: {{cancion.reproducciones}}</p>
-
-<form method="POST" action="/canciones/{{cancion.id}}/play">
-  <button type="submit">▶ Play</button>
-</form>
-
-<p>Artista: <a href="/artistas/{{cancion.Artistum.id}}">{{cancion.Artistum.nombre}}</a></p>
-<a href="/canciones">← Volver</a>
-<a href="/canciones/{{cancion.id}}/editar">Editar</a>
+<div class="detail-card">
+  <h2>{{cancion.titulo}}</h2>
+  <div class="detail-meta">
+    <span class="badge">{{cancion.album}}</span>
+    <span class="badge">{{cancion.duracion}}s</span>
+    <span class="badge badge-green">▶ {{cancion.reproducciones}} plays</span>
+  </div>
+  <p style="margin-top: 0.75rem;">Artista: <a href="/artistas/{{cancion.Artistum.id}}">{{cancion.Artistum.nombre}}</a></p>
+  <div class="actions">
+    <a href="/canciones" class="btn-secondary">← Volver</a>
+    <form method="POST" action="/canciones/{{cancion.id}}/play" style="display:inline;">
+      <button type="submit" class="play-btn">▶ Play</button>
+    </form>
+  </div>
+</div>

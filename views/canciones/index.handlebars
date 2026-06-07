@@ -1,11 +1,17 @@
-<h2>Canciones</h2>
-<a href="/canciones/nueva">+ Nueva canción</a>
+<div class="page-header">
+  <h2>Canciones</h2>
+  <a href="/canciones/nueva" class="btn-primary">+ Nueva canción</a>
+</div>
 
 <ul>
   {{#each canciones}}
   <li>
     <a href="/canciones/{{this.id}}">{{this.titulo}}</a>
-    — {{this.album}} — {{this.duracion}}s
+    <span class="meta">
+      <span class="badge">{{this.Artistum.nombre}}</span>
+      <span class="badge">{{this.album}}</span>
+      <span class="badge">{{this.duracion}}s</span>
+    </span>
   </li>
   {{/each}}
 </ul>

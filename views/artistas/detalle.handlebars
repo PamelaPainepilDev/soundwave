@@ -1,16 +1,25 @@
-<h2>{{artista.nombre}} </h2>
-<p>Género: {{artista.genero}} - País: {{artista.pais}} </p>
-<p>Duración total: {{artista.duracionTotal}} </p>
-
-<a href="/artistas">Volver</a>
-<a href="/artistas/{{artista.id}}/editar">Editar</a>
-<a href="/artistas/{{artista.id}}/shuffle">🔀 Shuffle</a>
+<div class="detail-card">
+  <h2>{{artista.nombre}}</h2>
+  <div class="detail-meta">
+    <span class="badge">{{artista.genero}}</span>
+    <span class="badge">{{artista.pais}}</span>
+    <span class="badge badge-green">⏱ {{artista.duracionTotal}}</span>
+  </div>
+  <div class="actions">
+    <a href="/artistas" class="btn-secondary">← Volver</a>
+    <a href="/artistas/{{artista.id}}/shuffle" class="btn-secondary">🔀 Shuffle</a>
+  </div>
+</div>
 
 <h3>Canciones</h3>
 <ul>
-    {{#each artista.Cancions}}
-    <li>
-        {{this.titulo}} - {{this.album}} - {{this.duracion}}s
-    </li>
-    {{/each}}
+  {{#each artista.Cancions}}
+  <li>
+    <a href="/canciones/{{this.id}}">{{this.titulo}}</a>
+    <span class="meta">
+      <span class="badge">{{this.album}}</span>
+      <span class="badge">{{this.duracion}}s</span>
+    </span>
+  </li>
+  {{/each}}
 </ul>
