@@ -351,3 +351,73 @@ input:focus, select:focus {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+.home-container {
+  animation: fadeIn 0.4s ease;
+}
+
+.home-hero {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+}
+
+.home-hero h2 {
+  font-size: 2.2rem;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 8px #38bdf8);
+}
+
+.home-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.home-card {
+  background: #111827;
+  border: 1px solid #1a2332;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.home-card:hover {
+  border-color: #38bdf8;
+  background: #131f2e;
+  transform: translateY(-4px);
+}
+
+.home-card-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.home-card h3 {
+  color: #38bdf8;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.5rem;
+}
+
+.home-card p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0;
+}

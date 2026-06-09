@@ -25,7 +25,7 @@ async function iniciar() {
   try {
     await sequelize.authenticate();
     console.log("Conexión OK");
-    await sequelize.sync({alter: true});
+    await sequelize.sync({force: false});
     console.log("Tablas listas");
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   } catch (err) {

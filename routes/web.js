@@ -3,6 +3,8 @@ const router = express.Router();
 const artistaWeb = require("../controllers/artistaWebController");
 const cancionWeb = require("../controllers/cancionWebController");
 
+router.get("/", artistaWeb.home);
+
 router.get("/artistas", artistaWeb.listar);
 router.get("/artistas/nuevo", artistaWeb.formNuevo);
 router.get("/artistas/:id", artistaWeb.detalle);
