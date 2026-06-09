@@ -13,6 +13,7 @@ router.get("/canciones", cancionWeb.listar);
 router.get("/canciones/nueva", cancionWeb.formNueva);
 router.get("/canciones/top10", cancionWeb.top10);
 router.post("/canciones/:id/play", cancionWeb.play);
+router.post("/canciones/:id/eliminar", cancionWeb.eliminar);
 router.get("/canciones/:id", cancionWeb.detalle);
 router.post("/canciones", cancionWeb.crear);
 

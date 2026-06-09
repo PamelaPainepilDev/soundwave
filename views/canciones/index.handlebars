@@ -12,6 +12,9 @@
       <span class="badge">{{this.album}}</span>
       <span class="badge">{{this.duracion}}s</span>
     </span>
+    <form action="/canciones/{{this.id}}/eliminar" method="POST" style="display:inline;">
+      <button type="submit" class="btn-danger" onclick="return confirm('¿Eliminar {{this.titulo}}?')">🗑</button>
+    </form>
   </li>
   {{/each}}
 </ul>
